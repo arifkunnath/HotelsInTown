@@ -21,6 +21,7 @@
 
     // Configure the view for the selected state
 }
+#pragma mark - Cell UI setup
 
 -(void)configureCellWith:(HotelObject *)hotel_obj{
     self.textLabel.text = hotel_obj.name;

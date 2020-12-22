@@ -21,9 +21,19 @@
     // Configure the view for the selected state
 }
 
+#pragma mark - Cell UI setup
+
 -(void)configureCellWith:(ReviewObject *)rev_obj{
     
-    self.lblComment.text = rev_obj.summary;
+    
+    if (rev_obj.summary.length > 0) {
+        self.lblComment.text = rev_obj.summary;
+    }
+    else{
+        self.lblComment.text = @"";
+    }
+    
+    
     if (rev_obj.title.length > 0) {
         self.lblTitle.text = rev_obj.title;
     }
@@ -40,5 +50,12 @@
   
     self.lblDate.text = [CommonFunction formattedDateFor:rev_obj.postedOn withDateFormat:@"dd-MMM-yy"];
     
+    if (rev_obj.rating) {
+        self.lblRating.text = [NSString stringWithFormat:@"Rating : %@ / 5",rev_obj.rating];
+    }
+    else{
+        self.lblRating.text = @"";
+
+    }
 }
 @end

@@ -38,7 +38,7 @@ static NetworkManager *sharedInstance = nil;
 }
 
 - (void)getListOfHotelsFor:(NSString *)city Completion:(void (^)(BOOL success,id responseObject, NSError *error))completion{
-   
+    
     NSString* urlString = [NSString stringWithFormat:@"https://%@%@%@",[[NSUserDefaults standardUserDefaults] valueForKey:baseURL],hotelListAPIEndPoint,city];
     NSURL* url = [CommonFunction escapedTextUrlFrom:urlString];
     [self commonGETMethodFor:url Completion:^(BOOL success, id responseObject, NSError *error) {
@@ -91,10 +91,10 @@ static NetworkManager *sharedInstance = nil;
                         NSDictionary* first_item = [guest_review_array firstObject];
                         if (first_item) {
                             NSArray* reviews = first_item[@"reviews"];
-
+                            
                             if (reviews) {
                                 NSMutableArray* list_array = [[NSMutableArray alloc] init];
-
+                                
                                 for (NSDictionary * single_dict in reviews){
                                     ReviewObject* review_object = [[ReviewObject alloc] initWithDetails:single_dict];
                                     [list_array addObject:review_object];
@@ -128,42 +128,42 @@ static NetworkManager *sharedInstance = nil;
 -(void)commonGETMethodFor:(NSURL *)url  Completion:(void (^)(BOOL success,id responseObject, NSError *error))completion{
     NSDictionary *headers = @{ @"x-rapidapi-key": [[NSUserDefaults standardUserDefaults] valueForKey:APIKey],
                                @"x-rapidapi-host": [[NSUserDefaults standardUserDefaults] valueForKey:baseURL] };
-
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"GET"];
     [request setAllHTTPHeaderFields:headers];
-
+    
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    if (error) {
-                                                        NSLog(@"%@", error);
-                                                        completion(FALSE,nil,error);
-                                                    } else {
-                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSLog(@"%@", httpResponse);
-                                                        NSDictionary *serializedData = [NSJSONSerialization JSONObjectWithData: data options:kNilOptions error:nil];
-                                                        if ([serializedData isKindOfClass:[NSDictionary class]]) {
-                                                            if (httpResponse.statusCode == 200) {
-                                                                completion(TRUE,serializedData,nil);
-                                                            }
-                                                            else{
-                                                                if (serializedData[@"message"]) {
-                                                                    NSError *error = [CommonFunction errorFromErrormessage:serializedData[@"message"]];
-                                                                    completion(FALSE,nil,error);
-
-                                                                }
-                                                            }
-                                                        }
-                                                        else{
-                                                            NSError *error = [CommonFunction errorFromErrormessage:hotelListAPIError];
-                                                            completion(FALSE,nil,error);
-                                                        }
-                                                       
-                                                    }
-                                                }];
+        if (error) {
+            NSLog(@"%@", error);
+            completion(FALSE,nil,error);
+        } else {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            NSLog(@"%@", httpResponse);
+            NSDictionary *serializedData = [NSJSONSerialization JSONObjectWithData: data options:kNilOptions error:nil];
+            if ([serializedData isKindOfClass:[NSDictionary class]]) {
+                if (httpResponse.statusCode == 200) {
+                    completion(TRUE,serializedData,nil);
+                }
+                else{
+                    if (serializedData[@"message"]) {
+                        NSError *error = [CommonFunction errorFromErrormessage:serializedData[@"message"]];
+                        completion(FALSE,nil,error);
+                        
+                    }
+                }
+            }
+            else{
+                NSError *error = [CommonFunction errorFromErrormessage:hotelListAPIError];
+                completion(FALSE,nil,error);
+            }
+            
+        }
+    }];
     [dataTask resume];
 }
 @end

@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lblComment;
+@property (weak, nonatomic) IBOutlet UILabel *lblRating;
 
 -(void)configureCellWith:(ReviewObject *)rev_obj;
 @end

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PXq-Ta-ELv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PXq-Ta-ELv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -145,17 +145,31 @@
                                                                 <constraint firstAttribute="height" constant="30" id="Tvs-5H-0w7"/>
                                                             </constraints>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEn-RG-1Gp">
-                                                            <rect key="frame" x="0.0" y="39" width="384" height="20"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PPi-wp-Rob">
+                                                            <rect key="frame" x="0.0" y="39" width="384" height="25"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dn0-DF-XHu">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="259" height="25"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                    <color key="textColor" name="App_button_color"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEx-bZ-Lnu">
+                                                                    <rect key="frame" x="264" y="0.0" width="120" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="120" id="EOr-96-b1a"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                                    <color key="textColor" name="App_button_color"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="iHx-Tg-nbn"/>
+                                                                <constraint firstAttribute="height" constant="25" id="R6E-Ng-T9h"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                                            <color key="textColor" name="App_button_color"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7A-Hx-4el">
-                                                            <rect key="frame" x="0.0" y="68" width="384" height="20"/>
+                                                            <rect key="frame" x="0.0" y="73" width="384" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" name="App_text_color"/>
                                                             <nil key="highlightedColor"/>
@@ -184,8 +198,9 @@
                                         <connections>
                                             <outlet property="lblComment" destination="M7A-Hx-4el" id="565-L3-46H"/>
                                             <outlet property="lblDate" destination="nyd-gM-Q8K" id="VNJ-me-dmc"/>
-                                            <outlet property="lblName" destination="Qhw-I6-Ibl" id="s3f-i3-uiF"/>
-                                            <outlet property="lblTitle" destination="oEn-RG-1Gp" id="OeN-lB-IB9"/>
+                                            <outlet property="lblName" destination="Qhw-I6-Ibl" id="pC4-PZ-kuJ"/>
+                                            <outlet property="lblRating" destination="gEx-bZ-Lnu" id="Smu-lV-vOx"/>
+                                            <outlet property="lblTitle" destination="dn0-DF-XHu" id="pcZ-Z0-8id"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

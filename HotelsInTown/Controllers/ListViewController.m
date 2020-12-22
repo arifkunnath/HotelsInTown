@@ -30,7 +30,6 @@
         
     
     hotelArray = [[NSMutableArray alloc] init];
-    
     self.tblviewList.rowHeight = 55;
     
 }
