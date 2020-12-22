@@ -10,6 +10,7 @@
 		5D37C5092591D6530025A6BF /* ReviewListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D37C5082591D6530025A6BF /* ReviewListViewController.m */; };
 		5D37C50D2591DB880025A6BF /* ReviewObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D37C50C2591DB880025A6BF /* ReviewObject.m */; };
 		5D37C5112591DDB20025A6BF /* ReviewViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D37C5102591DDB20025A6BF /* ReviewViewCell.m */; };
+		5D515AB725921ED800852A9E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D515AB625921ED800852A9E /* SettingsViewController.swift */; };
 		5DFB35902591A53A007F623E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFB358F2591A53A007F623E /* AppDelegate.m */; };
 		5DFB35932591A53A007F623E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFB35922591A53A007F623E /* SceneDelegate.m */; };
 		5DFB35992591A53A007F623E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFB35972591A53A007F623E /* Main.storyboard */; };
@@ -32,6 +33,8 @@
 		5D37C50C2591DB880025A6BF /* ReviewObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewObject.m; sourceTree = "<group>"; };
 		5D37C50F2591DDB20025A6BF /* ReviewViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewViewCell.h; sourceTree = "<group>"; };
 		5D37C5102591DDB20025A6BF /* ReviewViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewViewCell.m; sourceTree = "<group>"; };
+		5D515AB525921ED700852A9E /* HotelsInTown-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HotelsInTown-Bridging-Header.h"; sourceTree = "<group>"; };
+		5D515AB625921ED800852A9E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5DFB358B2591A53A007F623E /* HotelsInTown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelsInTown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFB358E2591A53A007F623E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DFB358F2591A53A007F623E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -135,6 +138,8 @@
 				5DFB35A92591A551007F623E /* ListViewController.m */,
 				5D37C5072591D6530025A6BF /* ReviewListViewController.h */,
 				5D37C5082591D6530025A6BF /* ReviewListViewController.m */,
+				5D515AB625921ED800852A9E /* SettingsViewController.swift */,
+				5D515AB525921ED700852A9E /* HotelsInTown-Bridging-Header.h */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				TargetAttributes = {
 					5DFB358A2591A53A007F623E = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1220;
 					};
 				};
 			};
@@ -239,6 +245,7 @@
 				5DFB35AF2591AD50007F623E /* ListViewCell.m in Sources */,
 				5DFB35A12591A53B007F623E /* main.m in Sources */,
 				5DFB35B52591B0AD007F623E /* NetworkManager.m in Sources */,
+				5D515AB725921ED800852A9E /* SettingsViewController.swift in Sources */,
 				5DFB35932591A53A007F623E /* SceneDelegate.m in Sources */,
 				5D37C50D2591DB880025A6BF /* ReviewObject.m in Sources */,
 			);
@@ -383,7 +390,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = EMA66R8VA4;
 				INFOPLIST_FILE = HotelsInTown/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -392,6 +401,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arif.-HotelsInTown.HotelsInTown";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HotelsInTown/Controllers/HotelsInTown-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -401,7 +413,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = EMA66R8VA4;
 				INFOPLIST_FILE = HotelsInTown/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -410,6 +424,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arif.-HotelsInTown.HotelsInTown";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HotelsInTown/Controllers/HotelsInTown-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -8,17 +8,18 @@
 #ifndef AppConstants_h
 #define AppConstants_h
 
-static NSString *baseURL = @"baseURL";
-static NSString *APIKey = @"APIKey";
 
-static NSString *AppBgColor = @"App_bg_color";
-static NSString *AppNavBarColor = @"App_navbar_color";
-static NSString *AppTextColor = @"App_text_color";
-static NSString *AppButtonColor = @"App_button_color";
+#define baseURL  @"baseURL"
+#define APIKey   @"APIKey"
 
-static NSString *ListCellIdentifier = @"list_cell";
-static NSString *reviewListIdentifier = @"reviewListVC";
-static NSString *reviewCellIdentifier = @"review_cell";
+#define AppBgColor @"App_bg_color"
+#define AppNavBarColor @"App_navbar_color"
+#define AppTextColor @"App_text_color"
+#define AppButtonColor @"App_button_color"
+
+#define ListCellIdentifier @"list_cell"
+#define reviewListIdentifier @"reviewListVC"
+#define reviewCellIdentifier  @"review_cell"
 
 
 #endif /* AppConstants_h */

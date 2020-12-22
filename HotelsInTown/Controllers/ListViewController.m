@@ -12,6 +12,7 @@
 #import "HotelObject.h"
 #import "ListViewCell.h"
 #import "ReviewListViewController.h"
+#import "HotelsInTown-Swift.h"
 
 @interface ListViewController () {
     NSMutableArray* hotelArray;
@@ -32,6 +33,9 @@
     hotelArray = [[NSMutableArray alloc] init];
     self.tblviewList.rowHeight = 55;
     
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
 }
 
 #pragma mark - UITableView Datasource & Delegates
@@ -123,4 +127,11 @@
     vc.selectedHotel = hotelObj;
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+#pragma mark - Tap Gesture Related
+-(void)dismissKeyboard
+{
+    [_searchBar resignFirstResponder];
+}
+
 @end
