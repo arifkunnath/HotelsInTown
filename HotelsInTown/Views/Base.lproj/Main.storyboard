@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PXq-Ta-ELv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PXq-Ta-ELv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,19 +22,19 @@
                                 <color key="textColor" name="App_text_color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xin-cn-XYo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xin-cn-XYo">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="list_cell" id="x57-A7-Tlj" customClass="ListViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x57-A7-Tlj" id="KkY-oT-Uaw">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2v1-NU-U2i">
-                                                    <rect key="frame" x="0.0" y="43" width="414" height="0.5"/>
+                                                    <rect key="frame" x="0.0" y="43.5" width="414" height="0.5"/>
                                                     <color key="backgroundColor" name="App_navbar_color"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.69999999999999996" id="8Ya-B8-RNX"/>
@@ -118,10 +118,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QpI-4E-sc5">
-                                <rect key="frame" x="15" y="108" width="364" height="100"/>
+                                <rect key="frame" x="15" y="108" width="384" height="100"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bj3-Ln-MNQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="364" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="API Host :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQ5-bt-CfQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="40"/>
@@ -133,10 +133,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69I-Ty-Tta">
-                                                <rect key="frame" x="75" y="0.0" width="289" height="40"/>
+                                                <rect key="frame" x="75" y="0.0" width="309" height="40"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter the host name" textAlignment="natural" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="JP9-HI-iU8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="289" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="309" height="40"/>
                                                         <color key="textColor" name="App_text_color"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -145,7 +145,7 @@
                                                         </connections>
                                                     </textField>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xfc-3M-EnE">
-                                                        <rect key="frame" x="0.0" y="39.5" width="289" height="0.5"/>
+                                                        <rect key="frame" x="0.0" y="39.5" width="309" height="0.5"/>
                                                         <color key="backgroundColor" name="App_button_color"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="0.69999999999999996" id="lBv-6B-SLM"/>
@@ -169,7 +169,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tr-hf-kqE">
-                                        <rect key="frame" x="0.0" y="60" width="364" height="40"/>
+                                        <rect key="frame" x="0.0" y="60" width="384" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="API Key :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4v-fc-0l1">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="40"/>
@@ -181,10 +181,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="foj-Wt-wDp">
-                                                <rect key="frame" x="75" y="0.0" width="289" height="40"/>
+                                                <rect key="frame" x="75" y="0.0" width="309" height="40"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter the API Key" textAlignment="natural" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="nus-k2-ryw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="289" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="309" height="40"/>
                                                         <color key="textColor" name="App_text_color"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -193,10 +193,9 @@
                                                         </connections>
                                                     </textField>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xJb-Td-FZb">
-                                                        <rect key="frame" x="0.0" y="39.5" width="254" height="0.5"/>
+                                                        <rect key="frame" x="0.0" y="39.5" width="309" height="0.5"/>
                                                         <color key="backgroundColor" name="App_button_color"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="254" id="L43-JW-CYi"/>
                                                             <constraint firstAttribute="height" constant="0.69999999999999996" id="Mza-bE-C3y"/>
                                                         </constraints>
                                                     </imageView>

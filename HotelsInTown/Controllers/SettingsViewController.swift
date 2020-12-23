@@ -9,9 +9,12 @@ import Foundation
 import UIKit
 class SettingsViewController: UIViewController {
     
+    //MARK: Variables
     @IBOutlet weak var txtfielHostName: UITextField!
     @IBOutlet weak var txtfieldAPIkey: UITextField!
     
+    //MARK: Life Cycle Methods
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +27,7 @@ class SettingsViewController: UIViewController {
     }
     
     
-    //MARK : Tap Gesture Action
+    //MARK: Tap Gesture Action
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
         
         

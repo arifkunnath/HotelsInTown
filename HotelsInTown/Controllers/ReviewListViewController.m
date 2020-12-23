@@ -23,6 +23,8 @@
 
 @implementation ReviewListViewController
 
+#pragma mark - App Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -33,33 +35,6 @@
     
     [self getReviewDetails];
 }
-
-#pragma mark - Webservice Related
--(void)getReviewDetails{
-    
-    [CommonFunction showLoaderInViewController:self];
-    [[NetworkManager getInstance] getReivewForHotel:_selectedHotel Completion:^(BOOL success, id  _Nonnull responseObject, NSError * _Nonnull error) {
-        if (success && [responseObject isKindOfClass:[NSArray class]]) {
-            [self->reviewArray addObjectsFromArray:responseObject];
-        }
-        else{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [CommonFunction showAlertWithTitle:@"" andMessage:error.localizedDescription inViewController:self Completion:^(BOOL dismissed) {
-                    [self.navigationController popViewControllerAnimated:true];
-                }];
-            });
-           
-        }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [CommonFunction removeLoaderFromViewController:self];
-            [self.tblviewReviewList reloadData];
-        });
-    }];
-    
-}
-
-
 
 #pragma mark - UITableView Datasource & Delegates
 
@@ -87,4 +62,32 @@
     [tableView deselectRowAtIndexPath:indexPath animated:TRUE];
     
 }
+
+
+#pragma mark - Webservice Related
+-(void)getReviewDetails{
+    
+    [CommonFunction showLoaderInViewController:self];
+    [[NetworkManager getInstance] getReivewForHotel:_selectedHotel Completion:^(BOOL success, id  _Nonnull responseObject, NSError * _Nonnull error) {
+        if (success && [responseObject isKindOfClass:[NSArray class]]) {
+            [self->reviewArray addObjectsFromArray:responseObject];
+        }
+        else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [CommonFunction showAlertWithTitle:@"" andMessage:error.localizedDescription inViewController:self Completion:^(BOOL dismissed) {
+                    [self.navigationController popViewControllerAnimated:true];
+                }];
+            });
+           
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [CommonFunction removeLoaderFromViewController:self];
+            [self.tblviewReviewList reloadData];
+        });
+    }];
+    
+}
+
+
 @end

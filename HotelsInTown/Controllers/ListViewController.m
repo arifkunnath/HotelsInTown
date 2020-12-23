@@ -25,6 +25,8 @@
 
 @implementation ListViewController
 
+#pragma mark - App Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -33,9 +35,6 @@
     hotelArray = [[NSMutableArray alloc] init];
     self.tblviewList.rowHeight = 55;
     
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    [self.view addGestureRecognizer:tap];
 }
 
 #pragma mark - UITableView Datasource & Delegates
@@ -62,18 +61,21 @@
 #pragma mark - SearchBar Delegates
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     
-    [searchBar resignFirstResponder];
     [self getHotelsLists];
 
 }
 #pragma mark - Button actions
 
 - (IBAction)searchButtonAction:(UIBarButtonItem *)sender {
+    
     [self getHotelsLists];
 }
 
 #pragma mark - Webservice Related
 -(void)getHotelsLists{
+    
+    [_searchBar resignFirstResponder];
+
     if (_searchBar.text.length > 0) {
         //call webservice
         [CommonFunction showLoaderInViewController:self];
@@ -126,12 +128,6 @@
     ReviewListViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:reviewListIdentifier];
     vc.selectedHotel = hotelObj;
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-#pragma mark - Tap Gesture Related
--(void)dismissKeyboard
-{
-    [_searchBar resignFirstResponder];
 }
 
 @end
